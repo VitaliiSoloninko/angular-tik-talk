@@ -24,3 +24,10 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.profile-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  height: min-content;
+}
