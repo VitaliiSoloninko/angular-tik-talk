@@ -12,13 +12,4 @@ import { Profile } from './data/interfaces/profile.interface';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  profileService = inject(ProfileService);
-  profiles: Profile[] = [];
-
-  constructor() {
-    this.profileService.getTestAccounts().subscribe((val) => {
-      this.profiles = val;
-    });
-  }
-}
+export class AppComponent {}
