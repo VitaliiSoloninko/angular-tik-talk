@@ -3,6 +3,10 @@
   grid-template-columns: repeat(2, 1fr);
   height: 100dvh;
   align-items: center;
+  justify-content: center;
   margin: 5%;
   gap: 10%;
+  @media (max-width: 767px) {
+    grid-template-columns: auto;
+  }
 }
