@@ -5,7 +5,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { from, map, tap } from 'rxjs';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -22,17 +21,6 @@ export class LoginPageComponent {
     username: new FormControl<string | null>(null, Validators.required),
     password: new FormControl<string | null>(null, Validators.required),
   });
-
-  constructor() {
-    from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-      .pipe(
-        map((val) => val * 2),
-        tap((val) => this.form.patchValue({ username: val.toString() }))
-      )
-      .subscribe((val) => {
-        console.log(val);
-      });
-  }
 
   onSubmit() {
     if (this.form.valid) {
