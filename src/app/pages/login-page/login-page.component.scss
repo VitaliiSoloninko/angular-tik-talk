@@ -10,3 +10,18 @@
     grid-template-columns: auto;
   }
 }
+
+.password-input {
+  position: relative;
+}
+
+.password-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #ffffffbf;
+  cursor: pointer;
+}
