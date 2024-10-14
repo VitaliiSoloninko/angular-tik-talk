@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -19,6 +19,8 @@ export class LoginPageComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
+  isPasswordVisible = signal<boolean>(false);
+
   form = new FormGroup({
     username: new FormControl<string | null>(null, Validators.required),
     password: new FormControl<string | null>(null, Validators.required),
@@ -26,6 +28,7 @@ export class LoginPageComponent {
 
   onSubmit() {
     if (this.form.valid) {
+      this.isPasswordVisible.set(true);
       // console.log(this.form.value);
       //@ts-ignore
       this.authService.login(this.form.value).subscribe((res) => {

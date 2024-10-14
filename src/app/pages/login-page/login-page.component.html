@@ -17,10 +17,13 @@
       <input
         formControlName="password"
         class="tt-input"
-        type="text"
+        [type]="isPasswordVisible() ? 'text' : 'password'"
         placeholder="Enter password"
       />
-      <button class="password-eye-btn">
+      <button
+        class="password-eye-btn"
+        (click)="isPasswordVisible.set(!isPasswordVisible())"
+      >
         <svg
           width="21"
           height="20"
