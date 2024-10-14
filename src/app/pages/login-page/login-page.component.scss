@@ -24,4 +24,8 @@
   border: none;
   color: #ffffffbf;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.password-eye-btn.active {
+  color: var(--primary-color);
 }
