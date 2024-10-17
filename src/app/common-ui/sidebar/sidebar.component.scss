@@ -33,5 +33,14 @@
     background-color: var(--dark-hover-color);
     color: var(--primary-color);
     border-radius: 2px;
+
+    .menu-item .svg-icon {
+      color: var(--primary-color);
+    }
   }
+}
+
+.menu-item .svg-icon {
+  width: 16px;
+  height: 16px;
 }
