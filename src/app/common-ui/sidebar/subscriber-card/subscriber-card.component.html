@@ -1,0 +1,14 @@
+<img
+  class="subscriber-avatar"
+  [src]="profile.avatarUrl | imgUrl"
+  [alt]="profile.lastName"
+/>
+
+<strong class="subtitle">{{ profile.firstName }} {{ profile.lastName }}</strong>
+
+<div class="mt20 to-subscribers">
+  <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
+    >All subscribers</a
+  >
+  <svg class="to-subscribers-icon" icon="arrow"></svg>
+</div>
