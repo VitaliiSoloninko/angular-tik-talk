@@ -44,3 +44,27 @@
   width: 16px;
   height: 16px;
 }
+
+.to-subscribers {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+.to-subscribers-link {
+  color: currentColor;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.to-subscribers-icon {
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.to-subscribers:hover,
+.to-subscribers-link:hover {
+  color: var(--light-color);
+}
