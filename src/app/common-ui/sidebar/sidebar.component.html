@@ -14,9 +14,11 @@
 <div class="medium-text mb20">Subscribers</div>
 
 <!-- Show subscribers in json format -->
-<pre>{{ subscribers$ | async | json }}</pre>
+<!-- <pre>{{ subscribers$ | async | json }}</pre> -->
 
-<!-- <app-subscriber-card></app-subscriber-card> -->
+@for (profile of subscribers$ | async; track profile.id) {
+<app-subscriber-card [profile]="profile"></app-subscriber-card>
+}
 
 <div class="mt20 to-subscribers">
   <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
