@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProfileService } from '../../data/services/profile.service';
@@ -8,12 +8,21 @@ import { SubscriberCardComponent } from './subscriber-card/subscriber-card.compo
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [SvgIconComponent, NgFor, SubscriberCardComponent, RouterLink],
+  imports: [
+    SvgIconComponent,
+    NgFor,
+    SubscriberCardComponent,
+    RouterLink,
+    AsyncPipe,
+    JsonPipe,
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
   profileService = inject(ProfileService);
+
+  subscribers$ = this.profileService.getSubscribersShortList();
 
   menuItems = [
     {
