@@ -12,6 +12,10 @@ export class ProfileService {
 
   constructor() {}
 
+  getSubscribersShortList() {
+    return this.http.get<Profile>(`${this.baseApiUrl}account/subscribers`);
+  }
+
   getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
   }
