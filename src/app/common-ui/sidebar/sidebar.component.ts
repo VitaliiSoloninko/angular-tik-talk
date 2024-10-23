@@ -1,6 +1,7 @@
 import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 import { ProfileService } from '../../data/services/profile.service';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
@@ -41,4 +42,8 @@ export class SidebarComponent {
       link: 'search',
     },
   ];
+
+  ngOnInit() {
+    firstValueFrom(this.profileService.getMe());
+  }
 }

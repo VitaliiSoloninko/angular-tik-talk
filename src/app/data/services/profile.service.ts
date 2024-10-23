@@ -12,6 +12,8 @@ export class ProfileService {
 
   baseApiUrl = 'https://icherniakov.ru/yt-course/';
 
+  me!: Profile;
+
   constructor() {}
 
   getSubscribersShortList() {
@@ -25,6 +27,8 @@ export class ProfileService {
   }
 
   getMe() {
-    return this.http.get<Profile>(`${this.baseApiUrl}account/me`);
+    return this.http
+      .get<Profile>(`${this.baseApiUrl}account/me`)
+      .pipe(map((res) => (this.me = res)));
   }
 }
