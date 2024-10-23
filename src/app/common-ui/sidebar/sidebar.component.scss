@@ -2,6 +2,7 @@
   display: block;
   background: var(--dark-color);
   padding: 20px 12px;
+  position: relative;
 }
 
 .main-menu-list {
@@ -40,14 +41,6 @@
   }
 }
 
-.sidebar__footer {
-  background-color: var(--dark-hover-color);
-  border-radius: 2px;
-  padding: 4px 16px;
-  display: grid;
-  grid-template-columns: 32px 1fr 16px;
-}
-
 .menu-item .svg-icon {
   width: 16px;
   height: 16px;
@@ -75,4 +68,36 @@
 .to-subscribers:hover,
 .to-subscribers-link:hover {
   color: var(--light-color);
+}
+
+// ****** footers
+
+.sidebar__footer {
+  position: absolute;
+  bottom: 20px;
+  background-color: var(--dark-hover-color);
+  border-radius: 2px;
+  padding: 4px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  grid-gap: 12px;
+  align-items: center;
+}
+
+.img-me {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.username-text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.settings-btn {
+  .svg-icon {
+    width: 13px;
+    height: 13px;
+  }
 }
