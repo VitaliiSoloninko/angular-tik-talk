@@ -27,4 +27,8 @@
   <svg class="svg-icon to-subscribers-icon" icon="arrow"></svg>
 </div>
 
-<footer class="sidebar__footer"></footer>
+<footer class="sidebar__footer">
+  @if (me(); as me) { @if (me. avatarUrl) {
+  <img [src]="me.avatarUrl | imgUrl" alt="" />
+  } @else { <img src="/assets/images/placeholder.png" alt="" /> }}
+</footer>
