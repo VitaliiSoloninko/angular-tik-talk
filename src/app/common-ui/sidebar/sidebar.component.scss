@@ -74,6 +74,7 @@
 
 .sidebar__footer {
   position: absolute;
+  width: calc(100% - 20px);
   bottom: 20px;
   background-color: var(--dark-hover-color);
   border-radius: 2px;
