@@ -5,11 +5,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-header.component';
 import { ProfileService } from '../../data/services/profile.service';
+import { imgUrlPipe } from '../../helpers/pipesimg-url.pipe';
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [ProfileHeaderComponent, AsyncPipe, RouterLink],
+  imports: [ProfileHeaderComponent, AsyncPipe, RouterLink, imgUrlPipe],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
 })
@@ -18,6 +19,7 @@ export class ProfilePageComponent {
   route = inject(ActivatedRoute);
 
   me$ = toObservable(this.profileService.me);
+  subscribers$ = this.profileService.getSubscribersShortList(5);
 
   profile$ = this.route.params.pipe(
     switchMap(({ id }) => {

@@ -7,4 +7,21 @@
   </a>
 </header>
 
+<main class="profile-page__body">
+  <div></div>
+  <div>
+    <h3 class="h6 mb16">Subscribers</h3>
+    <div lass="subscribers-wrapper">
+      @for (subscriber of subscribers$ | async; track subscriber.id) {
+      <a
+        class="subscriber-avatar-btn"
+        [routerLink]="['/profile', subscriber.id]"
+      >
+        <img [src]="subscriber.avatarUrl | imgUrl" alt="" />
+      </a>
+      }
+    </div>
+  </div>
+</main>
+
 }
