@@ -1,9 +1,12 @@
+selfishFish3
+LyNRPfyXTb
+
 Angular version 18.2.1.
 
-dev
+start dev
 npm start
 
-build
+start build
 npm run build
 
 ---
