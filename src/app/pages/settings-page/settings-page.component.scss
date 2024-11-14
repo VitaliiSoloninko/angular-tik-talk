@@ -8,10 +8,17 @@
   }
 }
 
-.profile-form {
+.profile-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 32px;
   border: 1px solid var(--light-color);
   background: var(--dark-color);
+  height: calc(100dvh - (24px * 4));
+}
+
+.profile-form {
   display: grid;
   grid-gap: 20px;
 }
@@ -23,10 +30,4 @@
   @media (max-width: 767.98px) {
     grid-template-columns: auto;
   }
-}
-
-.profile-label {
-}
-
-.profile-input {
 }
