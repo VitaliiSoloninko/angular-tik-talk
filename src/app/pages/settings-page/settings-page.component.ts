@@ -1,5 +1,6 @@
 import { Component, effect, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { firstValueFrom } from 'rxjs';
 import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-header.component';
 import { ProfileService } from '../../data/services/profile.service';
 
@@ -29,5 +30,13 @@ export class SettingsPageComponent {
     });
   }
 
-  onSave() {}
+  onSave() {
+    this.form.markAllAsTouched();
+    this.form.updateValueAndValidity();
+
+    if (this.form.invalid) return;
+
+    //@ts-ignore
+    firstValueFrom(this.profileService.patchProfile(this.form.value));
+  }
 }
