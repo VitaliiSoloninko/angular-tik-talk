@@ -4,6 +4,7 @@ import { toObservable } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-header.component';
+import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
 import { ProfileService } from '../../data/services/profile.service';
 import { imgUrlPipe } from '../../helpers/pipesimg-url.pipe';
 import { PostFeedComponent } from './post-feed/post-feed.component';
@@ -12,6 +13,7 @@ import { PostFeedComponent } from './post-feed/post-feed.component';
   selector: 'app-profile-page',
   standalone: true,
   imports: [
+    SvgIconComponent,
     ProfileHeaderComponent,
     AsyncPipe,
     RouterLink,
