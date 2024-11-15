@@ -11,20 +11,22 @@
   </ul>
 </nav>
 
-<div class="medium-text mb20">Subscribers</div>
+<div class="subscribers">
+  <div class="medium-text mb20">Subscribers</div>
 
-<!-- Show subscribers in json format -->
-<!-- <pre>{{ subscribers$ | async | json }}</pre> -->
+  <!-- Show subscribers in json format -->
+  <!-- <pre>{{ subscribers$ | async | json }}</pre> -->
 
-@for (profile of subscribers$ | async; track profile.id) {
-<app-subscriber-card [profile]="profile"></app-subscriber-card>
-}
+  @for (profile of subscribers$ | async; track profile.id) {
+  <app-subscriber-card [profile]="profile"></app-subscriber-card>
+  }
 
-<div class="mt20 to-subscribers">
-  <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
-    >All subscribers</a
-  >
-  <svg class="svg-icon to-subscribers-icon" icon="arrow"></svg>
+  <div class="mt20 to-subscribers">
+    <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
+      >All subscribers</a
+    >
+    <svg class="svg-icon to-subscribers-icon" icon="arrow"></svg>
+  </div>
 </div>
 
 <footer class="sidebar__footer">
@@ -35,7 +37,7 @@
   <div class="medium-text username-text">
     {{ me.username }}
   </div>
-  <a routerLink="['/settings']" class="settings-btn">
+  <a routerLink="settings" class="settings-btn">
     <svg class="svg-icon" icon="settings"></svg>
   </a>
 

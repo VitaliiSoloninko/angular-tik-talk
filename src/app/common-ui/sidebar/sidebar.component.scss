@@ -47,6 +47,10 @@
   height: 16px;
 }
 
+.subscribers {
+  padding: 16px;
+}
+
 .to-subscribers {
   display: flex;
   gap: 10px;
@@ -55,14 +59,15 @@
 }
 
 .to-subscribers-link {
+  display: block;
   color: currentColor;
   text-decoration: none;
   transition: all 0.3s ease 0s;
 }
 
 .to-subscribers-icon {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   transition: all 0.3s ease 0s;
 }
 

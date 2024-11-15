@@ -43,7 +43,7 @@ export class SidebarComponent {
     {
       label: 'Search',
       icon: 'search',
-      link: 'search',
+      link: '',
     },
   ];
 
