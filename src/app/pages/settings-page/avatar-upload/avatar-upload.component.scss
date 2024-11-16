@@ -36,11 +36,9 @@
   align-items: center;
   color: var(--light-color);
   transition: all 0.3s ease 0s;
-
   &:hover,
   &:focus-visible {
     color: var(--primary-color);
-    scale: 1.05;
   }
 }
 
