@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
+import { DragAndDropDirective } from '../../../common-ui/directives/drag-and-drop.directive';
 
 @Component({
   selector: 'app-avatar-upload',
   standalone: true,
-  imports: [SvgIconComponent],
+  imports: [SvgIconComponent, DragAndDropDirective],
   templateUrl: './avatar-upload.component.html',
   styleUrl: './avatar-upload.component.scss',
 })
