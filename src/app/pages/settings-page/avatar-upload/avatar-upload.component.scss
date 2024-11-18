@@ -23,9 +23,13 @@
   padding: 16px;
   display: grid;
   place-content: center;
+  transition: border 0.3s ease 0s;
   @media (max-width: 767.98px) {
     height: 100px;
     width: 100%;
+  }
+  &.fileover {
+    border: 1px dashed var(--primary-color);
   }
 }
 
