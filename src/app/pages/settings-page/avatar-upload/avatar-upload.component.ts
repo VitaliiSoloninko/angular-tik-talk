@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
 import { DragAndDropDirective } from '../../../common-ui/directives/drag-and-drop.directive';
+import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
 
 @Component({
   selector: 'app-avatar-upload',
@@ -15,6 +15,14 @@ export class AvatarUploadComponent {
   fileBrowserHandler(event: Event) {
     const file = (event.target as HTMLInputElement)?.files?.[0];
 
+    this.processFile(file);
+  }
+
+  onFileDropped(file: File) {
+    this.processFile(file);
+  }
+
+  processFile(file: File | null | undefined) {
     if (!file || !file.type.match('image')) return;
 
     const reader = new FileReader();
