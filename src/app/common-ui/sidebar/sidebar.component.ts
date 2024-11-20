@@ -31,6 +31,11 @@ export class SidebarComponent {
 
   menuItems = [
     {
+      label: 'Login',
+      icon: 'login',
+      link: 'login',
+    },
+    {
       label: 'My page',
       icon: 'home',
       link: 'profile/me',
@@ -44,6 +49,11 @@ export class SidebarComponent {
       label: 'Search',
       icon: 'search',
       link: '',
+    },
+    {
+      label: 'Settings',
+      icon: 'settings',
+      link: 'settings',
     },
   ];
 
