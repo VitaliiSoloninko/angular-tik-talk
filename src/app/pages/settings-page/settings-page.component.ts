@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, inject, ViewChild } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-header.component';
@@ -15,6 +15,8 @@ import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
 export class SettingsPageComponent {
   formBuilder = inject(FormBuilder);
   profileService = inject(ProfileService);
+
+  @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent;
 
   form = this.formBuilder.group({
     firstName: ['', Validators.required],
@@ -40,6 +42,13 @@ export class SettingsPageComponent {
     this.form.updateValueAndValidity();
 
     if (this.form.invalid) return;
+
+    if (this.avatarUploader.avatar) {
+      firstValueFrom(
+        this.profileService.uploadAvatar(this.avatarUploader.avatar)
+      );
+    }
+
     firstValueFrom(
       //@ts-ignore
       this.profileService.patchProfile({

@@ -12,9 +12,10 @@ import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component
 export class AvatarUploadComponent {
   preview = signal<string>('assets/images/placeholder.png');
 
+  avatar: File | null = null;
+
   fileBrowserHandler(event: Event) {
     const file = (event.target as HTMLInputElement)?.files?.[0];
-
     this.processFile(file);
   }
 
@@ -31,5 +32,6 @@ export class AvatarUploadComponent {
       this.preview.set(event.target?.result?.toString() ?? '');
     };
     reader.readAsDataURL(file);
+    this.avatar = file;
   }
 }
