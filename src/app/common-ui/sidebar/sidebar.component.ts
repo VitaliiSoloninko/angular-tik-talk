@@ -1,6 +1,6 @@
 import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { ProfileService } from '../../data/services/profile.service';
 import { imgUrlPipe } from '../../helpers/pipesimg-url.pipe';
@@ -18,6 +18,7 @@ import { SubscriberCardComponent } from './subscriber-card/subscriber-card.compo
     AsyncPipe,
     JsonPipe,
     imgUrlPipe,
+    RouterLinkActive,
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
@@ -48,7 +49,7 @@ export class SidebarComponent {
     {
       label: 'Search',
       icon: 'search',
-      link: '',
+      link: 'search',
     },
     {
       label: 'Settings',
