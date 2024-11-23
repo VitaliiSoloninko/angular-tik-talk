@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { Pageble } from '../interfaces/pageble.interface';
 import { Profile } from '../interfaces/profile.interface';
 
@@ -13,6 +13,7 @@ export class ProfileService {
   baseApiUrl = 'https://icherniakov.ru/yt-course/';
 
   me = signal<Profile | null>(null);
+  filteredProfiles = signal<Profile[]>([]);
 
   constructor() {}
 
@@ -51,9 +52,8 @@ export class ProfileService {
   }
 
   filterProfiles(params: Record<string, any>) {
-    return this.http.get<Pageble<Profile>>(
-      `${this.baseApiUrl}account/accounts`,
-      { params }
-    );
+    return this.http
+      .get<Pageble<Profile>>(`${this.baseApiUrl}account/accounts`, { params })
+      .pipe(tap((res) => this.filteredProfiles.set(res.items)));
   }
 }
