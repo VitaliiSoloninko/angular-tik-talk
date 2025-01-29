@@ -13,7 +13,6 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', redirectTo: 'profile/me', pathMatch: 'full' },
-      { path: 'login', component: LoginPageComponent },
       { path: 'search', component: SearchPageComponent },
       { path: 'profile/:id', component: ProfilePageComponent },
       { path: 'settings', component: SettingsPageComponent },
@@ -21,4 +20,5 @@ export const routes: Routes = [
     ],
     canActivate: [canActivateAuth],
   },
+  { path: 'login', component: LoginPageComponent },
 ];
